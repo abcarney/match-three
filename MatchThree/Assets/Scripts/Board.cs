@@ -29,7 +29,7 @@ public class Board : MonoBehaviour
 
         SetupTiles();
         SetupCamera();
-        FillRandom();
+        FillBoard();
     }
 
     void SetupTiles()
@@ -98,22 +98,64 @@ public class Board : MonoBehaviour
         return (x >= 0 && x < width && y >= 0 && y < height);
     }
 
-    void FillRandom()
+    GamePiece FillRandomAt(int x, int y)
     {
+        GameObject randomPiece = Instantiate(GetRandomGamePiece(), Vector3.zero, Quaternion.identity) as GameObject;
+
+        if (randomPiece != null)
+        {
+            randomPiece.GetComponent<GamePiece>().Init(this);
+            PlaceGamePiece(randomPiece.GetComponent<GamePiece>(), x, y);
+            randomPiece.transform.parent = transform;
+            return randomPiece.GetComponent<GamePiece>();
+        }
+        return null;
+    }
+
+    void FillBoard()
+    {
+        // Catch for infinite while loop
+        int maxIterations = 100;
+        int iterations = 0;
+
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
             {
-                GameObject randomPiece = Instantiate(GetRandomGamePiece(), Vector3.zero, Quaternion.identity) as GameObject;
+                GamePiece piece = FillRandomAt(i,j);
+                iterations = 0;
 
-                if (randomPiece != null)
+                while (HasMatchOnFill(i,j))
                 {
-                    randomPiece.GetComponent<GamePiece>().Init(this);
-                    PlaceGamePiece(randomPiece.GetComponent<GamePiece>(), i, j);
-                    randomPiece.transform.parent = transform;
+                    ClearPieceAt(i,j);
+                    piece = FillRandomAt(i, j);
+                    iterations++;
+
+                    if (iterations >= maxIterations)
+                    {
+                        Debug.Log("break ============");
+                        break;
+                    }
                 }
             }
         }
+    }
+
+    bool HasMatchOnFill(int x, int y, int minLength = 3)
+    {
+        List<GamePiece> leftMatches = FindMatches(x, y, new Vector2(-1, 0), minLength);
+        List<GamePiece> downwardMatches = FindMatches(x, y, new Vector2(0, -1), minLength);
+
+        if (leftMatches == null)
+        {
+            leftMatches = new List<GamePiece>();
+        }
+        if (downwardMatches == null)
+        {
+            downwardMatches = new List<GamePiece>();
+        }
+
+        return (leftMatches.Count > 0 || downwardMatches.Count > 0);
     }
 
     public void ClickTile(Tile tile)

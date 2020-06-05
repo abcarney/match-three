@@ -310,6 +310,7 @@ MonoBehaviour:
   - {fileID: 6367629458593157829, guid: 8a2bdadee0f59482ca07d0107e5746ca, type: 3}
   - {fileID: 2902820296525600614, guid: 90e7863922e954f15b1e4a5b9866a115, type: 3}
   - {fileID: 4622956771070559067, guid: ce72362c562704c1c9a217981aefc47d, type: 3}
+  swapTime: 0.3
 --- !u!4 &1381554309
 Transform:
   m_ObjectHideFlags: 0

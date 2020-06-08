@@ -324,6 +324,16 @@ MonoBehaviour:
     x: 2
     y: 3
     z: 0
+  - tilePrefab: {fileID: 661633827007588489, guid: a837c9300b4794b3d892a6d9a0d8be79,
+      type: 3}
+    x: 4
+    y: 2
+    z: 0
+  - tilePrefab: {fileID: 661633827007588489, guid: a837c9300b4794b3d892a6d9a0d8be79,
+      type: 3}
+    x: 4
+    y: 3
+    z: 0
 --- !u!4 &1381554309
 Transform:
   m_ObjectHideFlags: 0

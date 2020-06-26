@@ -371,6 +371,10 @@ MonoBehaviour:
     type: 3}
   colorBombPrefab: {fileID: 5318792223993799553, guid: bfb3d6175df5c424f9ffed89537dbd7f,
     type: 3}
+  maxCollectibles: 3
+  collectibleCount: 0
+  chanceForCollectible: 0.1
+  collectiblePrefabs: []
   swapTime: 0.25
   startingTiles:
   - prefab: {fileID: 8582429860827119791, guid: 091851729901a407b8574ad560bcc908,
@@ -392,30 +396,20 @@ MonoBehaviour:
     y: 3
     z: 0
   startingGamePieces:
-  - prefab: {fileID: 8085099718520670242, guid: 70a2699fcc1264e9292bd7de55fd99fe,
+  - prefab: {fileID: 8404163285387605236, guid: 8d5790379306d47d8b925607ff1f0ede,
       type: 3}
     x: 3
-    y: 3
+    y: 5
     z: 0
-  - prefab: {fileID: 8085099718520670242, guid: 70a2699fcc1264e9292bd7de55fd99fe,
+  - prefab: {fileID: 8404163285387605236, guid: 8d5790379306d47d8b925607ff1f0ede,
       type: 3}
     x: 3
     y: 4
     z: 0
-  - prefab: {fileID: 8085099718520670242, guid: 70a2699fcc1264e9292bd7de55fd99fe,
+  - prefab: {fileID: 8404163285387605236, guid: 8d5790379306d47d8b925607ff1f0ede,
       type: 3}
     x: 4
-    y: 5
-    z: 0
-  - prefab: {fileID: 8085099718520670242, guid: 70a2699fcc1264e9292bd7de55fd99fe,
-      type: 3}
-    x: 3
-    y: 2
-    z: 0
-  - prefab: {fileID: 8085099718520670242, guid: 70a2699fcc1264e9292bd7de55fd99fe,
-      type: 3}
-    x: 3
-    y: 1
+    y: 3
     z: 0
   fillYOffset: 10
   fillMoveTime: 0.5

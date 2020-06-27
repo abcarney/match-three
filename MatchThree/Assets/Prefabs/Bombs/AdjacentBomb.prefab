@@ -4899,4 +4899,5 @@ MonoBehaviour:
   yIndex: 0
   interpolation: 4
   matchValue: 8
+  scoreValue: 160
   bombType: 3

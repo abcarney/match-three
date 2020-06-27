@@ -4818,6 +4818,7 @@ MonoBehaviour:
   yIndex: 0
   interpolation: 4
   matchValue: 6
+  scoreValue: 160
   bombType: 3
 --- !u!1 &2289733561780209002
 GameObject:

@@ -381,8 +381,13 @@ public class Board : MonoBehaviour
                 }
                 else
                 {
-                    // ???
-                    //yield return new WaitForSeconds(swapTime);
+                    if (GameManager.Instance != null)
+                    {
+                        GameManager.Instance.movesLeft--;
+                        GameManager.Instance.UpdateMoves();
+                    }
+
+                    yield return new WaitForSeconds(swapTime);
 
                     Vector2 swapDirection = new Vector2(targetTile.xIndex - clickedTile.xIndex, targetTile.yIndex - clickedTile.yIndex);
                     m_clickedTileBomb = DropBomb(clickedTile.xIndex, clickedTile.yIndex, swapDirection, clickedPieceMatches);

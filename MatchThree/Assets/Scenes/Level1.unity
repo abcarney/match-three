@@ -936,11 +936,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedfc823e04eb409598c7574f7be2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movesLeft: 30
-  scoreGoal: 10000
+  movesLeft: 3
+  scoreGoal: 20000
   screenFader: {fileID: 1160640413}
   levelNameText: {fileID: 732352747}
   movesLeftText: {fileID: 316094055}
+  messageWindow: {fileID: 901107871}
+  loseIcon: {fileID: 21300000, guid: bd3696517379e4881a156ed01fb744bc, type: 3}
+  winIcon: {fileID: 21300000, guid: 7145d61122adb4d6eb5faa0642d6d8b9, type: 3}
+  goalIcon: {fileID: 21300000, guid: 5513bdb3cfeb041f6afcf9ee91d571fe, type: 3}
 --- !u!1 &901107865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1196,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1105122923}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 830164893}
+        m_MethodName: BeginGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 901107870}
+        m_MethodName: MoveOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 830164893}
+        m_MethodName: ReloadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1105122923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1378,25 +1415,7 @@ MonoBehaviour:
   - {fileID: 8404163285387605236, guid: 8d5790379306d47d8b925607ff1f0ede, type: 3}
   - {fileID: 7732959340190714055, guid: 61c62d159900946f8b1d00011dcb91b3, type: 3}
   swapTime: 0.25
-  startingTiles:
-  - prefab: {fileID: 8582429860827119791, guid: 091851729901a407b8574ad560bcc908,
-      type: 3}
-    x: 2
-    y: 2
-    z: 1
-  - prefab: {fileID: 8582429860827119791, guid: 091851729901a407b8574ad560bcc908,
-      type: 3}
-    x: 2
-    y: 3
-    z: 1
-  - prefab: {fileID: 661633827007588489, guid: a837c9300b4794b3d892a6d9a0d8be79, type: 3}
-    x: 4
-    y: 2
-    z: 0
-  - prefab: {fileID: 661633827007588489, guid: a837c9300b4794b3d892a6d9a0d8be79, type: 3}
-    x: 4
-    y: 3
-    z: 0
+  startingTiles: []
   startingGamePieces:
   - prefab: {fileID: 7657826155071847793, guid: 56f8e29af7be448ebaccaa79b96f82a9,
       type: 3}

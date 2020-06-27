@@ -63,7 +63,11 @@ public class Board : MonoBehaviour
     {
         m_allTiles = new Tile[width, height];
         m_allGamePieces = new GamePiece[width, height];
+        m_particleManager = GameObject.FindWithTag("ParticleManager").GetComponent<ParticleManager>();
+    }
 
+    public void SetupBoard()
+    {
         SetupTiles();
         SetupGamePieces();
 
@@ -72,7 +76,6 @@ public class Board : MonoBehaviour
 
         SetupCamera();
         FillBoard(fillYOffset, fillMoveTime);
-        m_particleManager = GameObject.FindWithTag("ParticleManager").GetComponent<ParticleManager>();
     }
 
     void MakeTile(GameObject prefab, int x, int y, int z = 0)

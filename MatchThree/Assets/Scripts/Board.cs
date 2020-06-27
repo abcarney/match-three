@@ -849,6 +849,8 @@ public class Board : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
             matches = FindMatchesAt(movingPieces);
+            collectedPieces = FindCollectiblesAt(0);
+            matches = matches.Union(collectedPieces).ToList();
 
             if (matches.Count == 0)
             {
@@ -950,6 +952,7 @@ public class Board : MonoBehaviour
                     }
 
                     allPiecesToClear = allPiecesToClear.Union(piecesToClear).ToList();
+                    allPiecesToClear = RemoveCollectibles(allPiecesToClear);
                 }
             }
         }
@@ -1120,5 +1123,24 @@ public class Board : MonoBehaviour
             && collectibleCount < maxCollectibles);
     }
 
+    List<GamePiece> RemoveCollectibles(List<GamePiece> bombedPieces)
+    {
+        List<GamePiece> collectiblePieces = FindAllCollectibles();
+        List<GamePiece> piecesToRemove = new List<GamePiece>();
 
+        foreach (GamePiece piece in collectiblePieces)
+        {
+            Collectible collectibleComponent = piece.GetComponent<Collectible>();
+
+            if (collectibleComponent != null)
+            {
+                if (!collectibleComponent.clearedByBomb)
+                {
+                    piecesToRemove.Add(piece);
+                }
+            }
+        }
+
+        return bombedPieces.Except(piecesToRemove).ToList();
+    }
 }

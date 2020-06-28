@@ -937,8 +937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedfc823e04eb409598c7574f7be2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movesLeft: 10
-  scoreGoal: 500
+  movesLeft: 999
+  scoreGoal: 1000000
   screenFader: {fileID: 1160640413}
   levelNameText: {fileID: 732352747}
   movesLeftText: {fileID: 316094055}
@@ -1416,7 +1416,37 @@ MonoBehaviour:
   - {fileID: 8404163285387605236, guid: 8d5790379306d47d8b925607ff1f0ede, type: 3}
   - {fileID: 7732959340190714055, guid: 61c62d159900946f8b1d00011dcb91b3, type: 3}
   swapTime: 0.25
-  startingTiles: []
+  startingTiles:
+  - prefab: {fileID: 3388289773860722555, guid: 0a07faceb56fb4750bafb0937c8a8819,
+      type: 3}
+    x: 4
+    y: 3
+    z: 0
+  - prefab: {fileID: 3388289773860722555, guid: 0a07faceb56fb4750bafb0937c8a8819,
+      type: 3}
+    x: 5
+    y: 3
+    z: 0
+  - prefab: {fileID: 3388289773860722555, guid: 0a07faceb56fb4750bafb0937c8a8819,
+      type: 3}
+    x: 6
+    y: 4
+    z: 0
+  - prefab: {fileID: 2289733559819115030, guid: 38ac27644d20f437b8947e0dbd4ec847,
+      type: 3}
+    x: 4
+    y: 4
+    z: 0
+  - prefab: {fileID: 6367629458593157829, guid: 8a2bdadee0f59482ca07d0107e5746ca,
+      type: 3}
+    x: 3
+    y: 3
+    z: 0
+  - prefab: {fileID: 6367629458593157829, guid: 8a2bdadee0f59482ca07d0107e5746ca,
+      type: 3}
+    x: 2
+    y: 3
+    z: 0
   startingGamePieces:
   - prefab: {fileID: 7657826155071847793, guid: 56f8e29af7be448ebaccaa79b96f82a9,
       type: 3}
@@ -2007,17 +2037,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicClips:
   - {fileID: 8300000, guid: e75e89afb6e1648e7a4a2ac64328a7c0, type: 3}
-  - {fileID: 8300000, guid: e5e029a21fda14206a9ff1423a1302a9, type: 3}
   winClips:
   - {fileID: 8300000, guid: 5f9fb0bfcf06e4304aab13b97645fe13, type: 3}
   loseClips:
   - {fileID: 8300000, guid: ed4ad50d33af142e6be4b65f4d37e37c, type: 3}
   bonusClips:
-  - {fileID: 8300000, guid: 8743038399aa64c5db230df6c26f4b71, type: 3}
-  - {fileID: 8300000, guid: b1e6e75baf8f04ae59f52e341161f1a9, type: 3}
-  - {fileID: 8300000, guid: 6d894f08d52a44322a56f6afc48f59e0, type: 3}
-  - {fileID: 8300000, guid: 6dce900c6b57748dbb2ee112588b2bd9, type: 3}
   - {fileID: 8300000, guid: 56e813bd88354448fb9f0a52536449a1, type: 3}
+  - {fileID: 8300000, guid: 6d894f08d52a44322a56f6afc48f59e0, type: 3}
   musicVolume: 0.5
   fxVolume: 1
   lowPitch: 0.95

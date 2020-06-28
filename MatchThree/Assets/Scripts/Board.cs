@@ -89,7 +89,7 @@ public class Board : MonoBehaviour
             m_allTiles[x,y] = tile.GetComponent<Tile>();
 
             tile.transform.parent = transform;
-
+            Debug.Log("Tile (" + x + "," + y + ")");
             m_allTiles[x,y].Init(x,y,this);
         }
     }
@@ -888,6 +888,10 @@ public class Board : MonoBehaviour
             else
             {
                 m_scoreMultiplier++;
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlayBonusSound();
+                }
                 yield return StartCoroutine(ClearAndCollapseRoutine(matches));
             }
         }
